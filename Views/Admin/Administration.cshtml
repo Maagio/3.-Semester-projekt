@@ -1,0 +1,75 @@
+﻿@model Evalulet.ViewModel.AdminControllerAdministrationViewModel;
+
+@using (Html.BeginForm())
+{ 
+    <body style="background-image: url('https://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg');">
+        <style>
+            body {
+                background-size: cover;
+            }
+        </style>
+
+        @{
+            ViewData["Title"] = "Administration";
+        }
+
+
+        <main role="main" class="container">
+            <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+
+                <div class="lh-100">
+                    <h5 class="mb-0 text-white lh-100">Evalulet</h5>
+                    <small>Since 2018</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 order-md-2 mb-4">
+                    <h2>Administration</h2>
+                    <br />
+                    <div class="my-3 p-3 bg-white rounded box-shadow">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">Opret ny bruger</h6>
+                        <div class="media text-muted pt-3">
+
+                            <p>Email: @Html.TextBoxFor(p => p.CreateAdmin.CreateEmail)@Html.ValidationMessageFor(p => p.CreateAdmin.CreateEmail)</p>
+                            <br />
+                            <p>Password: @Html.PasswordFor(p => p.CreateAdmin.CreatePassword)@Html.ValidationMessageFor(p => p.CreateAdmin.CreatePassword)</p>
+                            <br />
+                            <p>Security Level (0 el 1): @Html.TextBoxFor(p => p.CreateAdmin.CreateSecurityLevel)@Html.ValidationMessageFor(p => p.CreateAdmin.CreateSecurityLevel)</p>
+                            <Button type="submit">Opret Bruger</Button>
+
+                        </div>
+                    </div>
+
+                    <div class="my-3 p-3 bg-white rounded box-shadow">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">Slet Lære</h6>
+                        <div class="media text-muted pt-3">
+                            <p>Vælg lære mail: @Html.DropDownListFor(m => m.CreateClass.SelectedEmail, Model.CreateClass.GetEmail, "Vælg en email")</p>
+                            <Button type="submit">Slet</Button>
+                        </div>
+                    </div>
+
+                    <div class="my-3 p-3 bg-white rounded box-shadow">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">Opret nyt hold</h6>
+                        <div class="media text-muted pt-3">
+                            <p>Hold navn: @Html.TextBoxFor(p => p.CreateTeam.CreateTeam)@Html.ValidationMessageFor(p => p.CreateTeam.CreateTeam)</p>
+                            <Button type="submit">Opret Hold</Button>
+                        </div>
+                    </div>
+                    <div class="my-3 p-3 bg-white rounded box-shadow">
+                        <h6 class="border-bottom border-gray pb-2 mb-0">Opret nyt Fag</h6>
+                        <div class="media text-muted pt-3">
+                            <p>Tilknyt lære: @Html.DropDownListFor(m => m.CreateClass.SelectedEmail, Model.CreateClass.GetEmail, "Vælg en email")</p>
+                            <br />
+                            <p>Fag: @Html.TextBoxFor(p => p.CreateClass.CreateClass)@Html.ValidationMessageFor(p => p.CreateClass.CreateClass)</p>
+                            <Button type="submit">Opret Fag</Button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </body>
+    }

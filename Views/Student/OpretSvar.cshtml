@@ -1,0 +1,107 @@
+﻿@model Evalulet.Models.Student.StudentAnswerModel
+
+<body style="background-image: url('https://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg');">
+    <style>
+        body {
+            background-size: cover;
+        }
+    </style>
+
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+
+            <div class="lh-100">
+                <h5 class="mb-0 text-white lh-100">Evalulet</h5>
+                <small>Since 2018</small>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Fordele</h6>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.FordelList, new { @class = "form-control", @placeholder = "Fordel nr. 1" })@Html.ValidationMessageFor(p => p.FordelList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.FordelList, new { @class = "form-control", @placeholder = "Fordel nr. 2" })@Html.ValidationMessageFor(p => p.FordelList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.FordelList, new { @class = "form-control", @placeholder = "Fordel nr. 3" })@Html.ValidationMessageFor(p => p.FordelList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.FordelList, new { @class = "form-control", @placeholder = "Fordel nr. 4" })@Html.ValidationMessageFor(p => p.FordelList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.FordelList, new { @class = "form-control", @placeholder = "Fordel nr. 5" })@Html.ValidationMessageFor(p => p.FordelList)
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Forbedringer</h6>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.ForbedringList, new { @class = "form-control", @placeholder = "Forbedring nr. 1" })@Html.ValidationMessageFor(p => p.ForbedringList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.ForbedringList, new { @class = "form-control", @placeholder = "Forbedring nr. 2" })@Html.ValidationMessageFor(p => p.ForbedringList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.ForbedringList, new { @class = "form-control", @placeholder = "Forbedring nr. 3" })@Html.ValidationMessageFor(p => p.ForbedringList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.ForbedringList, new { @class = "form-control", @placeholder = "Forbedring nr. 4" })@Html.ValidationMessageFor(p => p.ForbedringList)
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                        @Html.TextBoxFor(p => p.ForbedringList, new { @class = "form-control", @placeholder = "Forbedring nr. 5" })@Html.ValidationMessageFor(p => p.ForbedringList)
+                    </p>
+                </div>
+                <small class="d-block text-right mt-3">
+                    <button type="submit" class="btn btn-outline-primary">Gem</button>
+                </small>
+            </div>
+        }
+    </main>
+</body>

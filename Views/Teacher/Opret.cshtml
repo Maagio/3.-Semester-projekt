@@ -1,0 +1,133 @@
+﻿@model Evalulet.Models.Teacher.OpretSkemaModel 
+
+<body style="background-image: url('https://www.planwallpaper.com/static/images/Alien_Ink_2560X1600_Abstract_Background_1.jpg');">
+    <style>
+        body {
+            background-size: cover;
+        }
+    </style>
+
+
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+
+            <div class="lh-100">
+                <h5 class="mb-0 text-white lh-100">Evalulet</h5>
+                <small>Since 2018</small>
+            </div>
+        </div>
+
+
+        @using (Html.BeginForm())
+    {
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Opret spørgeskema</h6>
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Hold</strong>
+                    @Html.DropDownListFor(p => p.Hold, Model.GetTeam)@Html.ValidationMessageFor(p => p.Hold) <br>
+                    Tilføj det hold du ønsker at oprette et spørgeskema til.
+                </p>
+            </div>
+
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Fag</strong>
+                    @Html.DropDownListFor(p => p.FagNavn, Model.GetClassName)@Html.ValidationMessageFor(p => p.FagNavn)<br>
+                    Vælg det fag undersøgelsen omhandler.
+                </p>
+            </div>
+
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Email</strong>
+                    @Html.DropDownListFor(p => p.Email, Model.GetClassEmail)@Html.ValidationMessageFor(p => p.Email)<br>
+                </p>
+            </div>
+
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Overskrift</strong>
+                    @Html.TextBoxFor(p => p.Overskrift)@Html.ValidationMessageFor(p => p.Overskrift)<br>
+                    Det her bliver overskriften på din spørgeundersøgelse
+                </p>
+            </div>
+
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=6f42c1&fg=6f42c1&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Fri tekst / Beskrivelse</strong>
+                    @Html.TextBoxFor(p => p.FriTekst) <br>
+                    Her kan du skrive lidt om hvad din undersøgelse omhandler.
+                </p>
+            </div>
+            <small class="d-block text-right mt-3">
+                <button type="submit" class="btn btn-outline-primary">Opret</button>
+            </small>
+        </div>
+}
+
+
+
+
+
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Stop evalueringer</h6>
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">Hold</strong>
+                    @Html.DropDownListFor(p => p.DeleteSurveyCode, Model.GetDeleteSurveyCode)@Html.ValidationMessageFor(p => p.DeleteSurveyCode)<br>
+                    Vælg undersøgelsen du ønsker at stoppe.
+                </p>
+            </div>
+
+            <small class="d-block text-right mt-3">
+                <button type="submit" class="btn btn-outline-primary">Stop Evaluering</button>
+            </small>
+        </div>
+
+
+
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Tidligere undersøgelser</h6>
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Systemudvikling</strong>
+                        <a href="#">Vis</a>
+                    </div>
+                    <span class="d-block">Oprettet af PEL</span>
+                </div>
+            </div>
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Programmering i praksis</strong>
+                        <a href="#">Vis</a>
+                    </div>
+                    <span class="d-block">Oprettet af OLE</span>
+                </div>
+            </div>
+            <div class="media text-muted pt-3">
+                <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark">Teknik</strong>
+                        <a href="#">Vis</a>
+                    </div>
+                    <span class="d-block">Oprettet af PEL</span>
+                </div>
+            </div>
+            <small class="d-block text-right mt-3">
+                <a class="p-2 text-dark" asp-controller="Teacher" asp-action="Visskemaer">Administrer undersøgelser</a>
+            </small>
+        </div>
+    </main>
+</body>

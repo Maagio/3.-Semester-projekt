@@ -1,0 +1,153 @@
+﻿@model Evalulet.Models.Home.Index
+
+@section Styles {
+    <link href="~/css/ModalStyles.min.css" rel="stylesheet" type="text/css" />
+}
+
+<body style="background-image: url('https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Velkommen til Evalulet</h1>
+        <p class="lead">Vælg type.</p>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Underviser</h4>
+                </div>
+                <div class="card-body">
+                    <br />
+                    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="document.getElementById('id01').style.display='block'">Vælg</button>
+
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Elev</h4>
+                </div>
+                <div class="card-body">
+                    <br />
+                    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="document.getElementById('id02').style.display='block'">Vælg</button>
+
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+        @using (Html.BeginForm())
+        {
+        <!-- The Modal -->
+        <div id="id01" class="modal">
+
+
+            <!-- Modal Content -->
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                        <span onclick="document.getElementById('id01').style.display='none'"
+                              class="close" title="Close Modal">&times;</span>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="imgcontainer">
+                            <img src="~/images/banner1.svg" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <br />
+                            Email: @Html.TextBoxFor(p => p.Email)
+                            @Html.ValidationMessageFor(p => p.Email, "", new { @class = "text-danger" })
+                            <!---<input type="text" placeholder="Enter Username" name="uname">-->
+                            <br />
+                            <label for="psw"><b>Password</b></label>
+                            <br />
+                            Password: @Html.PasswordFor(p => p.Password)
+                            @Html.ValidationMessageFor(p => p.Password, "", new { @class = "text-danger" })
+                            <!--<input type="password" placeholder="Enter Password" name="psw">-->
+                            <br />
+                            <button name="submit" value="teacher" type="submit">Login</button>
+                            <p>@ViewBag.ErrorMessage</p>
+                            <br />
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                            <br />
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="id02" class="modal">
+
+
+            <!-- Modal Content -->
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login</h4>
+                        <span onclick="document.getElementById('id02').style.display='none'"
+                              class="close" title="Close Modal">&times;</span>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="imgcontainer">
+                            <img src="~/images/banner2.svg" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label for="kname"><b>Indtast kode</b></label>
+                            <br />
+                            SurveyCode: @Html.TextBoxFor(p => p.SurveyCode)
+                            <br />
+                            <button name="submit" value="student" type="submit">Login</button>
+                            <br />
+                        </div>
+
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </body>
